@@ -108,3 +108,32 @@ uvicorn backend-demo.main:app --reload
 - AI가 정답을 대신 제공하기보다 진단 결과 설명과 학습 방향 추천을 보조하도록 역할 정의
 - FastAPI 기반 문제 조회, 답안 제출, 진단 결과 조회 흐름 정리
 - 정답 여부, 풀이 시간, 시도 횟수, 오답 유형을 활용한 초기 진단 로직 설계
+
+---
+
+## Project Artifacts
+
+이 저장소에는 CodeMong의 초기 구현 방향을 확인할 수 있는 산출물이 포함되어 있습니다.
+
+| Artifact | Path | Purpose |
+|---|---|---|
+| FastAPI Demo | `backend-demo/main.py` | 문제 조회, 답안 제출, 취약 개념 조회 흐름 구현 |
+| Diagnosis Logic | `backend-demo/diagnosis_logic.py` | 정답 여부, 풀이 시간, 시도 횟수, 오답 유형 기반 취약도 계산 |
+| Diagnosis Test | `backend-demo/test_diagnosis_logic.py` | 취약도 점수 계산 결과 검증 |
+| DB Schema | `sql/schema.sql` | 사용자, 문제, 풀이 기록, 오답 유형, 진단 결과 테이블 설계 |
+| API Specification | `docs/api-spec.md` | 주요 API 요청·응답 구조 정리 |
+| MVP Plan | `docs/mvp-plan.md` | 최소 기능 범위와 개발 순서 정리 |
+| Requirements | `requirements.txt` | FastAPI Demo 실행을 위한 기본 패키지 정리 |
+
+---
+
+## Limitations
+
+현재 저장소는 초기 설계 및 데모 단계이므로 다음 한계가 있습니다.
+
+- 실제 데이터베이스 연동은 아직 구현되지 않았습니다.
+- 생성형 AI API 연동은 향후 확장 계획 단계입니다.
+- 사용자 인증, 대시보드, 배포 환경은 포함되어 있지 않습니다.
+- 현재 진단 로직은 실제 학습 데이터를 기반으로 검증된 모델이 아니라, MVP 검증을 위한 규칙 기반 초기 로직입니다.
+
+이 한계는 SKALA 과정에서 FastAPI, DB 연동, 생성형 AI 활용 기능을 학습하며 보완하고자 합니다.
