@@ -66,12 +66,13 @@ AI가 모든 판단을 대신하는 구조보다, 풀이 기록과 오답 유형
 현재 FastAPI 데모는 CodeMong의 핵심 학습 흐름을 단순화해 구성했습니다.
 
 | Method | Endpoint | Purpose |
-|   GET  | `/`      | API 상태 확인 |
-|   GET  | `/problems` | 문제 목록 조회 |
-|   POST | `/submit` | 사용자 답안 제출 및 정오답 판정 |
-|   GET  | `/diagnosis/{user_id}` | 사용자별 취약 개념 진단 결과 조회 |
+|---|---|---|
+| GET | `/` | API 상태 확인 |
+| GET | `/problems` | 문제 목록 조회 |
+| POST | `/submit` | 사용자 답안 제출 및 정오답 판정 |
+| GET | `/diagnosis/{user_id}` | 사용자별 취약 개념 진단 결과 조회 |
 
-이 구조는 문제 풀이 -> 풀이 기록 저장 -> 취약 개념 분석 -> AI 기반 설명/추천으로 이어지는 CodeMong의 핵심 흐름을 표현합니다.
+이 구조는 문제 풀이 → 풀이 기록 저장 → 취약 개념 분석 → AI 기반 설명/추천으로 이어지는 CodeMong의 핵심 흐름을 표현합니다.
 
 ## 10. Diagnosis Logic
 
@@ -96,8 +97,18 @@ FastAPI 데모 실행 방법은 다음과 같습니다.
 
 ```bash
 pip install -r requirements.txt
-uvicorn backend-demo.main:app --reload
+cd backend-demo
+uvicorn main:app --reload
 ```
+
+실행 후 아래 주소에서 API를 확인할 수 있습니다.
+
+```text
+http://127.0.0.1:8000
+http://127.0.0.1:8000/docs
+```
+
+`/docs`에서는 문제 조회, 답안 제출, 사용자별 진단 결과 조회 API를 테스트할 수 있습니다.
 
 ## 13. My Role
 
