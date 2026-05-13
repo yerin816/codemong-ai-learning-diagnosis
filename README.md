@@ -89,3 +89,11 @@ CodeMong의 진단은 단순 정답률만 보는 것이 아니라, 다음 데이
 ## 11. One-line Summary
 
 CodeMong은 프로그래밍 초보자의 풀이 데이터를 기반으로 취약 개념을 진단하고, 생성형 AI가 그 결과를 설명해 다음 학습 행동을 제안하는 서비스입니다.
+
+## 12. How to Run Demo
+
+FastAPI 데모 실행 방법은 다음과 같습니다.
+
+```bash
+pip install -r requirements.txt
+uvicorn backend-demo.main:app --reload
